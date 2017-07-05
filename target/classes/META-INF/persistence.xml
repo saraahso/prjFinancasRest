@@ -1,0 +1,21 @@
+https://www.google.com.br/search?q=hibernate+oracle+conection&oq=hibernate+oracle&aqs=chrome.1.69i57j69i59j69i60j69i61j69i60.4000j0j7&sourceid=chrome&ie=UTF-8<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="BancoPU" transaction-type="JTA">
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <jta-data-source>java:/datasources/BancoDS</jta-data-source>
+    <class>br.org.pti.prjfinancasweb.entity.TipoOperacao</class>
+    <class>br.org.pti.prjfinancasweb.config.ConversorData</class>
+    <class>model.entities.Cliente</class>
+    <class>model.entities.ContaBancaria</class>
+    <class>model.entities.Usuario</class>
+    <class>model.entities.Operacao</class>
+    <exclude-unlisted-classes>true</exclude-unlisted-classes>
+    <properties>
+      <!-- configuracoes do JPA -->
+      <property name="hibernate.show_sql" value="true"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <property name="hibernate.connection.autocommit" value="false"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL9Dialect"/>
+    </properties>
+  </persistence-unit>
+</persistence>
